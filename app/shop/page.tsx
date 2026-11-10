@@ -8,7 +8,7 @@ export default async function Shop({searchParams}:{searchParams:Promise<{search?
   const [products,params]=await Promise.all([getCatalog(),searchParams]);
   const released=products.filter(p=>isReleased(p));
   return <><section className="wrap collection-page">
-    <p className="eyebrow">DUBBCLUB / THE COLLECTION</p><h1>Shop.</h1><p className="intro">Training layers and off-duty essentials.</p>
+    <h1>Shop.</h1>
     <CatalogGrid products={released.length?released:products} startSearch={params.search==="1"}/>
   </section><Signup/></>;
 }

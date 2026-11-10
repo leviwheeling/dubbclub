@@ -18,7 +18,7 @@ export function Signup({id="drop-list"}:{id?:string}) {
     finally{setBusy(false);}
   }
   return <section className="signup-block" id={id}>
-    <div><p className="eyebrow light-muted"><span className="tiny-dot"/> THE DROP LIST</p><h2>Get the drop.</h2><p>New gear and release dates, straight to your inbox.</p></div>
+    <div><h2>Get the drop.</h2><p>New gear and release dates, straight to your inbox.</p></div>
     <div><form className="signup-form" onSubmit={submit}><label className="sr-only" htmlFor={`${id}-email`}>Email address</label>
       <input id={`${id}-email`} type="email" name="email" placeholder="Your email address" required maxLength={254}/>
       <button type="submit" aria-label="Join the drop list" disabled={busy||success}><Arrow/></button>

@@ -4,11 +4,10 @@ import {useState} from "react";
 import {BagIcon, MenuIcon, SearchIcon} from "./icons";
 import {useBag} from "./bag-store";
 
-export function Header({open}:{open:boolean}) {
+export function Header() {
   const [menu,setMenu]=useState(false);
   const count=useBag().reduce((total,item)=>total+item.quantity,0);
   return <>
-    <div className="top-strip"><span className="tiny-dot"/>{open?"THE SHOP IS OPEN":"DUBBCLUB / COLLECTION PREVIEW"}</div>
     <header className="site-header">
       <button className="icon-button mobile-toggle" aria-label="Menu" aria-expanded={menu} onClick={()=>setMenu(!menu)}><MenuIcon/></button>
       <Link href="/" className="brand" aria-label="DUBBCLUB home"><img src="/wordmark.svg" width="126" height="28" alt="dubbclub"/></Link>

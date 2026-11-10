@@ -15,7 +15,6 @@ export default function About() {
     <section className="about-cover" aria-labelledby="about-title">
       <Image src="/images/campaign.webp" alt="" fill sizes="100vw" loading="eager" fetchPriority="high"/>
       <div className="wrap about-cover-content">
-        <p className="eyebrow"><span className="tiny-dot"/> THE CLUB / DUBBCLUB</p>
         <h1 id="about-title">The win<br/>is yours.</h1>
         <div className="about-cover-foot">
           <p>For the people who keep showing up.</p>

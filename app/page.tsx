@@ -25,11 +25,6 @@ export default async function Home() {
         <Link className="hero-lookbook" href="/coming-soon">Coming soon <UpRight width={15} height={15}/></Link>
       </div>
     </section>
-    <div className="wrap home-club-line">
-      <span className="eyebrow"><span className="tiny-dot"/> THE CLUB</span>
-      <p>For the work behind the win.</p>
-      <Link className="text-link" href="/about">Meet DUBBCLUB <UpRight width={16} height={16}/></Link>
-    </div>
     <section className="wrap featured">
       <div className="section-head"><div><p className="eyebrow">THE COLLECTION</p><h2>First rotation.</h2></div><Link className="text-link" href="/shop">View all pieces <UpRight/></Link></div>
       <div className="product-grid">{featured.map(product=><ProductCard product={product} key={product.slug}/>)}</div>
