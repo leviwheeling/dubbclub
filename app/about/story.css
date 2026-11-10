@@ -1,0 +1,58 @@
+.about-cover{position:relative;isolation:isolate;min-height:clamp(500px,76svh,790px);display:grid;align-items:end;color:#fff;background:#272620;overflow:hidden}
+.about-cover>img{object-fit:cover;object-position:62% 47%;filter:grayscale(.85) brightness(.72)}
+.about-cover::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0c0c0bcc 0%,#0c0c0b46 56%,#0c0c0b00 100%),linear-gradient(0deg,#0c0c0b8f,transparent 50%);pointer-events:none}
+.about-cover-content{position:relative;z-index:1;padding-block:55px 39px}
+.about-cover h1{font-size:clamp(88px,13vw,218px);letter-spacing:-.095em;line-height:.84;margin:24px 0 29px -.055em}
+.about-cover-foot{display:flex;align-items:center;justify-content:space-between;gap:15px}
+.about-cover-foot p{font-size:clamp(16px,2.1vw,26px);line-height:1.3}
+.story-scroll{width:48px;height:48px;border:1px solid #ffffffa8;border-radius:50%;display:grid;place-items:center;color:white;transition:background .2s,color .2s}
+.story-scroll svg{transform:rotate(90deg)}
+.story-scroll:hover{background:white;color:var(--ink)}
+.about-intro{display:grid;grid-template-columns:minmax(125px,.34fr) 1fr;gap:28px;padding-block:clamp(64px,10vw,158px);scroll-margin-top:15px}
+.about-intro .eyebrow{padding-top:9px}
+.about-intro h2{max-width:900px;font-size:clamp(45px,6.65vw,108px);line-height:.94;letter-spacing:-.085em}
+.club-story{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(42px,9vw,160px);align-items:start;margin-bottom:clamp(62px,10vw,142px)}
+.story-visual{position:sticky;top:clamp(20px,9svh,100px);margin:0}
+.story-photo,.story-mobile-photo{position:relative;overflow:hidden;background:var(--stone)}
+.story-photo{height:min(70svh,740px);min-height:390px}
+.story-photo img,.story-mobile-photo img{object-fit:cover}
+.story-photo img{opacity:0;transform:scale(1.035);transition:opacity .5s ease,transform .8s cubic-bezier(.2,.7,.3,1)}
+.story-photo img[data-active="true"]{opacity:1;transform:scale(1)}
+.story-caption{border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding-block:14px;color:var(--muted)}
+.story-steps{display:flex;gap:5px}
+.story-steps span{display:block;width:24px;height:2px;background:var(--line);transition:background .2s}
+.story-steps span[data-active="true"]{background:var(--ink)}
+.story-chapter{min-height:77svh;display:flex;align-items:center;border-top:1px solid var(--line);padding-block:30px}
+.story-chapter:last-child{border-bottom:1px solid var(--line)}
+.story-mobile-photo{display:none}
+.story-copy h2{font-size:clamp(36px,5vw,77px);letter-spacing:-.079em;line-height:.94;margin:16px 0 19px;max-width:560px}
+.story-copy>p:last-child{color:var(--muted);font-size:clamp(15px,1.4vw,19px);line-height:1.6;max-width:370px}
+.about-end{background:var(--ink);color:white;padding-block:clamp(54px,8.5vw,122px)}
+.about-end-inner{display:flex;align-items:flex-end;justify-content:space-between;gap:26px}
+.about-end h2{font-size:clamp(58px,10vw,157px);line-height:.86;letter-spacing:-.095em;margin-top:16px}
+.about-end .button{background:white;color:var(--ink);margin-bottom:4px}
+.about-end .button:hover{background:var(--stone)}
+@supports(animation-timeline:view()){
+  @media(prefers-reduced-motion:no-preference){
+    .story-copy,.about-intro h2{animation:story-enter both linear;animation-timeline:view();animation-range:entry 0% cover 28%}
+  }
+}
+@keyframes story-enter{from{opacity:.63;transform:translateY(24px)}to{opacity:1;transform:none}}
+@media(max-width:760px),(prefers-reduced-motion:reduce){
+  .club-story{display:block}
+  .story-visual{display:none}
+  .story-chapter{min-height:auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:25px;padding-block:22px}
+  .story-mobile-photo{display:block;aspect-ratio:4/4.3}
+  .story-copy{align-self:center}
+}
+@media(max-width:600px){
+  .about-cover{min-height:clamp(500px,74svh,690px)}
+  .about-cover>img{object-position:55% 50%}
+  .about-cover-content{padding-bottom:25px}
+  .about-cover h1{font-size:clamp(76px,18vw,110px);margin-block:17px 21px}
+  .about-intro{grid-template-columns:1fr;gap:13px}
+  .about-intro .eyebrow{padding-top:0}
+  .story-chapter{grid-template-columns:1fr;gap:0;padding-block:17px 33px}
+  .story-copy{padding-top:24px}
+  .about-end-inner{align-items:flex-start;flex-direction:column}
+}
