@@ -14,9 +14,8 @@ export default async function Home() {
   return <>
     <section className="hero wrap">
       <div className="hero-copy">
-        <div className="hero-index eyebrow"><span className="index-mark" aria-hidden="true"><UpRight width={14} height={14}/></span> TRAINING / LIFESTYLE</div>
         <h1>Made for <br/>the work.</h1>
-        <p>Training layers and off-duty essentials. Black, white, and ready to put in the hours.</p>
+        <p>Comfortable essentials for training and everyday wear.</p>
         <Link className="button dark" href="/shop">Explore the collection <Arrow/></Link>
       </div>
       <div className="hero-media">
@@ -26,7 +25,7 @@ export default async function Home() {
       </div>
     </section>
     <section className="wrap featured">
-      <div className="section-head"><div><p className="eyebrow">THE COLLECTION</p><h2>First rotation.</h2></div><Link className="text-link" href="/shop">View all pieces <UpRight/></Link></div>
+      <div className="section-head"><div><h2>First rotation.</h2></div><Link className="text-link" href="/shop">View all pieces <UpRight/></Link></div>
       <div className="product-grid">{featured.map(product=><ProductCard product={product} key={product.slug}/>)}</div>
     </section>
     <section className="wrap editorial">
