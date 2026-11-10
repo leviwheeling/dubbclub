@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {isReleased} from "@/lib/catalog";
 import {getCatalog} from "@/lib/products";
 import {CatalogGrid} from "../components/catalog-grid";
@@ -9,6 +10,7 @@ export default async function Shop({searchParams}:{searchParams:Promise<{search?
   const released=products.filter(p=>isReleased(p));
   return <><section className="wrap collection-page">
     <h1>Shop.</h1>
-    <CatalogGrid products={released.length?released:products} startSearch={params.search==="1"}/>
+    {released.length ? <CatalogGrid products={released} startSearch={params.search==="1"}/> :
+      <div className="empty-state"><p>The shop is not open yet.</p><Link className="text-link" href="/coming-soon">See what’s coming →</Link></div>}
   </section><Signup/></>;
 }
